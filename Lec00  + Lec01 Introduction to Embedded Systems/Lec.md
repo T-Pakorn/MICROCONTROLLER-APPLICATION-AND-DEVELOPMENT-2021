@@ -62,7 +62,11 @@ Microcontroller
 RTOS (Real Time Operating System)
 ไล่จากระดับต่ำไปสูง
 
+ฺBare Metal = MCU (Micro Controller Unit)
+
 ![](14.png)
+
+Toolchain คือโปรแกรมที่ใช้พัฒนา
 
 Compiler
 
