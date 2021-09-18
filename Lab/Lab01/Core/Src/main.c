@@ -43,7 +43,13 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t num = 0;
+uint8_t led0 = 0;
+uint8_t right = 0;
+uint8_t mid = 0;
+uint8_t left = 0;
+eft = 0;
+uint8_t biLed = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -96,12 +102,29 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  right=!(biLed&1);
+	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_10,right);
+	  mid=!(biLed&10);
+	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_11,mid);
+	  left=!(biLed&100);
+	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_12,left);
+
 	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_13,GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_14,GPIO_PIN_RESET);
-	  HAL_Delay(1000);
+	  led0 = 1;
+	  HAL_Delay(500);
 	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_13,GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_14,GPIO_PIN_SET);
-	  HAL_Delay(300);
+	  led0 = 0;
+	  HAL_Delay(500);
+
+	  biLed++;
+	  num++;
+	  if(num>7){
+		  num = 0;
+		  biLed = 0;
+	  }
+
+
   }
   /* USER CODE END 3 */
 }
