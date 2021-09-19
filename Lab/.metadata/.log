@@ -2153,3 +2153,24 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-09-13 16:30:15.280
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-09-19 16:13:57.310 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-09-19 16:14:09.694
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-09-19 16:14:09.775
+!MESSAGE Log4j initialized with config file C:\Users\179\Desktop\Repository\MICROCONTROLLER-APPLICATION-AND-DEVELOPMENT-2021\Lab\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-09-19 16:14:20.410
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-09-19 16:15:19.889
+!MESSAGE Indexed 'Lab04' (22 sources, 82 headers) in 2.56 sec: 4,592 declarations; 19,380 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0083%)
+
+!ENTRY org.eclipse.cdt.ui 2 0 2021-09-19 17:15:29.784
+!MESSAGE The 'org.eclipse.cdt.ui.DOMCompletionProposalComputer' proposal computer from the 'org.eclipse.cdt.ui' plug-in did not complete normally. The extension took too long to return from the 'computeCompletionProposals()' operation.
