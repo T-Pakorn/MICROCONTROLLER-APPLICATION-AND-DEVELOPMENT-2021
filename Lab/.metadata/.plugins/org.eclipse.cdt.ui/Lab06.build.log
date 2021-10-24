@@ -1,0 +1,37 @@
+17:43:23 **** Incremental Build of configuration Debug for project Lab06 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'displayNumber':
+../Core/Src/main.c:52:2: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+   52 |  snprintf(str, sizeof str, "%lu", (unsigned long)x);
+      |  ^~~~~~~~
+../Core/Src/main.c:52:2: warning: incompatible implicit declaration of built-in function 'snprintf'
+../Core/Src/main.c:25:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+   24 | #include "gpio.h"
+  +++ |+#include <stdio.h>
+   25 | 
+../Core/Src/main.c:53:46: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   53 |  HAL_UART_Transmit(&huart1, (uint8_t *) str, strlen(str), 100);
+      |                                              ^~~~~~
+../Core/Src/main.c:53:46: warning: incompatible implicit declaration of built-in function 'strlen'
+../Core/Src/main.c:25:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   24 | #include "gpio.h"
+  +++ |+#include <string.h>
+   25 | 
+arm-none-eabi-gcc -o "Lab06.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\179\Desktop\Repository\MICROCONTROLLER-APPLICATION-AND-DEVELOPMENT-2021\Lab\Lab06\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab06.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab06.elf
+ 
+arm-none-eabi-size   Lab06.elf 
+arm-none-eabi-objdump -h -S  Lab06.elf  > "Lab06.list"
+arm-none-eabi-objcopy  -O binary  Lab06.elf  "Lab06.bin"
+   text	   data	    bss	    dec	    hex	filename
+  13468	    120	   1888	  15476	   3c74	Lab06.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab06.bin
+ 
+Finished building: Lab06.list
+ 
+
+17:43:23 Build Finished. 0 errors, 4 warnings. (took 848ms)
+

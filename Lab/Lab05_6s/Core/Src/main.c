@@ -156,6 +156,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&raw_adc_buffer,6);
+  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_14,0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -223,12 +224,12 @@ void SystemClock_Config(void)
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc){
 	HAL_GPIO_WritePin(GPIOG,GPIO_PIN_14,1);
 	display_out(raw_adc_buffer);
-	HAL_Delay(1000);
+	HAL_Delay(500);
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	HAL_GPIO_WritePin(GPIOG,GPIO_PIN_14,0);
-	//HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&raw_adc_buffer,1);
+	HAL_Delay(500);
 }
 /* USER CODE END 4 */
 
